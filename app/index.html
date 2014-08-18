@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>angular-hello-world</title>
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="css/foundation.css" />
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+
+</head>
+
+<body ng-app="helloApp">
+    <div ng-controller="HelloCtrl">
+        <p>{{greeting}} {{person}}</p>
+        <input ng-model="person">
+    </div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script>
+    angular.module('helloApp', [])
+        .controller('HelloCtrl', function ($scope) {
+            $scope.greeting = 'Hello';
+            $scope.person = 'World';
+    });
+</script>
+</body>
+
+</html>
